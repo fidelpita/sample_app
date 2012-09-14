@@ -1,13 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'pg', '0.14.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.6'
+  #gem 'sqlite3', '1.3.6'
   gem 'rspec-rails', '2.11.0'
+  gem 'guard-rspec', '1.2.1'
+  gem 'terminal-notifier-guard'
 end
 
 gem 'json'
@@ -28,8 +31,7 @@ gem 'jquery-rails', '2.1.1'
 
 group :test do
   gem 'capybara', '1.1.2'
-end
-
-group :production do
-  gem 'pg', '0.12.2'
+  gem 'rb-fsevent', '0.9.1', :require => false
+  gem 'spork', '0.9.2'
+  gem 'guard-spork', '1.1.0'
 end
